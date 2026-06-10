@@ -51,19 +51,43 @@ section {
     display: flex;
     justify-content: center;
 
-}/* Imagen de los productos */
-.producto img {
-    width: 220px;
-    height: auto;
-    margin-bottom: 15px;
-   transition: transform 0.3s ease;;
-    cursor: pointer;
 }
+
+/* Tarjeta del producto */
+.producto {
+    background: white;
+    width: 650px;
+    min-height: 650px;
+    padding: 25px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagen de los productos */
+.producto img {
+    width: 100%;
+    max-width: 650px;
+    height: 650px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+}
+
 .producto:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    transform: scale(1.08);
-}/* Sección de colores */
+}
+
+/* Sección de colores */
 .colores {
     margin-top: 20px;
 }
@@ -108,10 +132,18 @@ section {
     margin-bottom: 8px;
 }
 
-.titulo-catalogo p {
-    color: #666;
-    margin: 0;
-}.contador {
+.catalogo {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contador {
     background: #f5f5f7;
     color: #333;
     display: inline-block;
@@ -161,4 +193,128 @@ section {
 .buscador input:focus {
     border-color: #0071e3;
     box-shadow: 0 0 10px rgba(0,113,227,0.3);
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+.categorias button {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px #ddd;
+    transition: 0.3s;
+}
+
+.categorias button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px #bbb;
+}
+
+/* Colores de los productos */
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 90%;
+    margin: 8px auto;
+    padding: 12px;
+
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Círculos de los colores */
+.circulo {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    flex-shrink: 0;
+}
+
+/* Colores reales */
+.negro {
+    background-color: #2b2b2b;
+}
+
+.natural {
+    background-color: #b5aea1;
+}
+
+.blanco {
+    background-color: #f4f4f4;
+}
+
+.desierto {
+    background-color: #8b5a4a;
+}
+
+/* Estados de stock */
+.disponible {
+    background-color: #d7f5d7;
+    color: #0a7a0a;
+}
+
+.agotado {
+    background-color: #ffe0e0;
+    color: #b00000;
+}
+
+.galeria {
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 35px;
+    height: 35px;
+    
+    border: none;
+    border-radius: 50%;
+    
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    
+    font-size: 18px;
+}
+
+.izquierda {
+    left: -45px;
+}
+
+.derecha {
+    right: -45px;
+}
+
+.flecha:hover {
+    background: #f0f0f0;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#imagenProducto {
+    width: 500px !important;
+    height: 500px !important;
+    object-fit: contain;
 }
