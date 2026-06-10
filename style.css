@@ -1,0 +1,164 @@
+/* Diseño general de la página */
+body {
+    background-color: #f2f2f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+   background: #eef4ff;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Logo */
+header img {
+    width: 150px;
+    height: auto;
+}
+
+/* Título principal */
+h1 {
+    color: #d10000;
+    margin: 10px 0 5px;
+}
+
+/* Subtítulo */
+h2 {
+    color: #444;
+    margin: 0;
+}
+
+/* Descripción */
+header p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* Sección del catálogo */
+section {
+    margin: 40px auto;
+    background: white;
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}/* Imagen de los productos */
+.producto img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 15px;
+   transition: transform 0.3s ease;;
+    cursor: pointer;
+}
+.producto:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: scale(1.08);
+}/* Sección de colores */
+.colores {
+    margin-top: 20px;
+}
+
+.colores h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Recuadros de colores */
+.color {
+    width: 70%;
+    margin: 8px auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Colores disponibles */
+.disponible {
+    background-color: #d4f8d4;
+    color: #0a6d0a;
+}
+
+/* Colores agotados */
+.agotado {
+    background-color: #ffe0e0;
+    color: #b00000;
+}/* Título del catálogo */
+.titulo-catalogo {
+    background-color: white;
+    width: 70%;
+    max-width: 700px;
+    margin: 20px auto 40px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+.titulo-catalogo h2 {
+    color: #d10000;
+    margin-bottom: 8px;
+}
+
+.titulo-catalogo p {
+    color: #666;
+    margin: 0;
+}.contador {
+    background: #f5f5f7;
+    color: #333;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+ .whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+} 
+.buscador {
+    text-align: center;
+    margin: 20px;
+}
+
+.buscador input {
+    width: 300px;
+    max-width: 80%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.buscador input:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 10px rgba(0,113,227,0.3);
+}
