@@ -110,3 +110,37 @@ function actualizarContador() {
 
 
 actualizarContador();
+
+function actualizarCategorias() {
+
+    let productos = document.querySelectorAll(".producto");
+
+    let conteo = {
+        iphone: 0,
+        ipad: 0,
+        airpods: 0,
+        watch: 0,
+        mac: 0,
+        cables: 0,
+        adaptadores: 0
+    };
+
+    productos.forEach(producto => {
+
+        let categoria = producto.dataset.categoria;
+
+        if (conteo[categoria] !== undefined) {
+            conteo[categoria]++;
+        }
+
+    });
+
+    document.getElementById("cat-todos").textContent = productos.length;
+
+    for (let categoria in conteo) {
+        document.getElementById("cat-" + categoria).textContent = conteo[categoria];
+    }
+
+}
+
+actualizarCategorias();

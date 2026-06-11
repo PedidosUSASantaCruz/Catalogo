@@ -40,16 +40,40 @@ class="whatsapp" target="_blank">
     
     <!-- Botones de categorías -->
     <div class="categorias">
-        <button onclick="mostrarCategoria('todos')">📦 Todos</button>
-        <button onclick="mostrarCategoria('iphone')">📱 iPhone</button>
-        <button onclick="mostrarCategoria('ipad')">📟 iPad</button>
-        <button onclick="mostrarCategoria('airpods')">🎧 AirPods</button>
-        <button onclick="mostrarCategoria('watch')">⌚ Apple Watch</button>
-        <button onclick="mostrarCategoria('mac')">💻 Mac</button>
-        <button onclick="mostrarCategoria('cables')">🔌 Cables</button>
-        <button onclick="mostrarCategoria('adaptadores')">⚡ Adaptadores</button>
-        
-   </div>
+
+    <button onclick="mostrarCategoria('todos')">
+        📦 Todos (<span id="cat-todos">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('iphone')">
+        📱 iPhone (<span id="cat-iphone">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('ipad')">
+        📟 iPad (<span id="cat-ipad">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('airpods')">
+        🎧 AirPods (<span id="cat-airpods">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('watch')">
+        ⌚ Apple Watch (<span id="cat-watch">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('mac')">
+        💻 Mac (<span id="cat-mac">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('cables')">
+        🔌 Cables (<span id="cat-cables">0</span>)
+    </button>
+
+    <button onclick="mostrarCategoria('adaptadores')">
+        ⚡ Adaptadores (<span id="cat-adaptadores">0</span>)
+    </button>
+
+</div>
 
 
     <div class="buscador">
