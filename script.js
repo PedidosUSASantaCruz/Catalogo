@@ -63,3 +63,23 @@ function cambiarImagen(boton, direccion) {
     // Guarda la posición actual
     imagen.dataset.actual = actual;
 }
+function precargarImagenes() {
+
+    let imagenes = document.querySelectorAll(".imagen-producto");
+
+    imagenes.forEach(imagen => {
+
+        let lista = JSON.parse(imagen.dataset.imagenes);
+
+        lista.forEach(ruta => {
+
+            let img = new Image();
+            img.src = ruta;
+
+        });
+
+    });
+
+}
+
+precargarImagenes();
