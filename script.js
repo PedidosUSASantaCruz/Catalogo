@@ -83,3 +83,30 @@ function precargarImagenes() {
 }
 
 precargarImagenes();
+
+function actualizarContador() {
+
+    let productos = document.querySelectorAll(".producto");
+
+    let totalProductos = productos.length;
+    let totalUnidades = 0;
+
+    document.querySelectorAll(".cantidad").forEach(item => {
+
+        let texto = item.textContent;
+
+        let numero = parseInt(texto);
+
+        if (!isNaN(numero)) {
+            totalUnidades += numero;
+        }
+
+    });
+
+    document.getElementById("total-productos").textContent = totalProductos;
+    document.getElementById("total-unidades").textContent = totalUnidades;
+
+}
+
+
+actualizarContador();
