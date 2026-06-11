@@ -1,4 +1,9 @@
 /* Diseño general de la página */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f2f2f7;
     font-family: Arial, sans-serif;
@@ -48,9 +53,6 @@ section {
     border-radius: 15px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     text-align: center;
-    display: flex;
-    justify-content: center;
-
 }
 
 /* Tarjeta del producto */
@@ -401,13 +403,13 @@ section {
 
 /* Flecha izquierda */
 .izquierda {
-    left: -45px;
+    left: -25px;
 }
 
 
 /* Flecha derecha */
 .derecha {
-    right: -45px;
+    right: -25px;
 }
 
 
