@@ -15,58 +15,51 @@ function buscarProductos() {
 
 
 function mostrarCategoria(categoria) {
+console.log(categoria);
 
     let productos = document.querySelectorAll(".producto");
 
     productos.forEach(producto => {
+        let categoriaProducto = producto.getAttribute("data-categoria");
 
-        if (categoria === "todos") {
+        if (categoria === "todos" || categoriaProducto === categoria) {
             producto.style.display = "block";
-
-        } else if (producto.classList.contains(categoria)) {
-            producto.style.display = "block";
-
         } else {
             producto.style.display = "none";
         }
-
     });
-
 }
+
 // Posición actual de la imagen
-let imagenActual = 0;
 
-// Lista de imágenes del Titanio Negro
-let imagenes = [
-    "imagenes/iphone16promax-frente-titanio negro.png",
-    "imagenes/iphone16promax-posterior-titanio negro.png"
-];
+function cambiarImagen(boton, direccion) {
 
-// Mostrar la primera imagen al cargar
-document.getElementById("imagenProducto").src = imagenes[imagenActual];
+    // Busca la imagen del mismo producto
+    let galeria = boton.parentElement;
+    let imagen = galeria.querySelector(".imagen-producto");
 
+    // Obtiene la lista de imágenes guardada en HTML
+    let imagenes = JSON.parse(imagen.dataset.imagenes);
 
-// Flecha derecha
-function imagenSiguiente() {
+    // Saber cuál imagen está mostrando actualmente
+    let actual = parseInt(imagen.dataset.actual);
 
-    imagenActual++;
+    // Cambiar posición
+    actual = actual + direccion;
 
-    if (imagenActual >= imagenes.length) {
-        imagenActual = 0;
+    // Si pasa del límite vuelve al inicio
+    if (actual >= imagenes.length) {
+        actual = 0;
     }
 
-    document.getElementById("imagenProducto").src = imagenes[imagenActual];
-}
-
-
-// Flecha izquierda
-function imagenAnterior() {
-
-    imagenActual--;
-
-    if (imagenActual < 0) {
-        imagenActual = imagenes.length - 1;
+    // Si va antes de la primera va a la última
+    if (actual < 0) {
+        actual = imagenes.length - 1;
     }
 
-    document.getElementById("imagenProducto").src = imagenes[imagenActual];
+    // Cambia la foto
+    imagen.src = imagenes[actual];
+
+    // Guarda la posición actual
+    imagen.dataset.actual = actual;
 }
