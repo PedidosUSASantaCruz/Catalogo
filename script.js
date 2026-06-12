@@ -15,18 +15,41 @@ function buscarProductos() {
 
 
 function mostrarCategoria(categoria) {
-console.log(categoria);
+
+    console.log(categoria);
+
+    let botones = document.querySelectorAll(".categorias button");
+
+     botones.forEach(boton => {
+        
+    boton.classList.remove("activo");
+});
+
+event.target.classList.add("activo");
 
     let productos = document.querySelectorAll(".producto");
 
     productos.forEach(producto => {
+
         let categoriaProducto = producto.getAttribute("data-categoria");
 
         if (categoria === "todos" || categoriaProducto === categoria) {
+
             producto.style.display = "block";
+
+            // Reinicia la animación
+            producto.style.animation = "none";
+
+            producto.offsetHeight; // fuerza el reinicio
+
+            producto.style.animation = "aparecerProducto 0.4s ease forwards";
+
         } else {
+
             producto.style.display = "none";
+
         }
+
     });
 }
 
@@ -144,3 +167,61 @@ function actualizarCategorias() {
 }
 
 actualizarCategorias();
+
+function agregarBotonesWhatsApp() {
+
+    let productos = document.querySelectorAll(".producto");
+
+    productos.forEach(producto => {
+
+        let nombre = producto.querySelector("h3").textContent;
+        let precio = producto.querySelector(".precio").textContent;
+
+        let mensaje = 
+        `Hola 👋, estoy interesado en ${nombre} con un precio de ${precio}. ¿Sigue disponible?`;
+
+        let enlace = document.createElement("a");
+
+        enlace.href = 
+        "https://wa.me/59174663104?text=" + encodeURIComponent(mensaje);
+
+        enlace.className = "boton-whatsapp-producto";
+
+        enlace.innerHTML = "💬 Consultar por WhatsApp";
+
+        enlace.target = "_blank";
+
+        producto.appendChild(enlace);
+
+    });
+
+}
+
+agregarBotonesWhatsApp();
+
+function volverArriba() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+window.addEventListener("scroll", function() {
+
+    let boton = document.getElementById("volver-arriba");
+
+
+    if (window.scrollY > 400) {
+
+    boton.classList.add("visible");
+
+} else {
+
+    boton.classList.remove("visible");
+
+}
+
+});
