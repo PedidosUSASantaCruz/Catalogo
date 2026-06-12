@@ -667,3 +667,13 @@ h4 {
 
 }
 
+@media (max-width: 768px) {
+
+    section {
+        width: 98%;
+        padding: 15px 8px;
+        margin: 20px auto;
+    }
+
+}
+
