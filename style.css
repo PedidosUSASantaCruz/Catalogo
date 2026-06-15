@@ -793,12 +793,12 @@ h4 {
 
 /* Flecha izquierda */
 .carrusel-iphone17 .anterior {
-    left:  35px;
+    left:  -25px;
 }
 
 /* Flecha derecha */
 .carrusel-iphone17 .siguiente {
-    right:  35px;
+    right:  -25px;
 }
 
 @media (max-width: 768px) {
