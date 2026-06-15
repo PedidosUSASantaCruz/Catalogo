@@ -121,7 +121,7 @@ section {
 }
 
 /* Colores disponibles */
-disponible {
+.disponible {
     background: #d8f4d8;
     color: #056b05;
 
@@ -794,5 +794,30 @@ h4 {
 /* Flecha derecha */
 .carrusel-iphone17 .siguiente {
     right:  35px;
+}
+
+@media (max-width: 768px) {
+
+    .categorias {
+        gap: 10px;
+        padding: 0 8px;
+    }
+
+    .categorias button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .color-iphone17 {
+        width: 95%;
+        gap: 15px;
+        font-size: 16px;
+        padding: 12px;
+    }
+
 }
 
