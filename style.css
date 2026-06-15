@@ -821,3 +821,28 @@ h4 {
 
 }
 
+@media (max-width: 768px) {
+
+    .color-iphone17 {
+        display: grid !important;
+        grid-template-columns: 25px 1fr auto !important;
+        align-items: center !important;
+
+        width: 95% !important;
+        padding: 10px 15px !important;
+        gap: 10px !important;
+
+        font-size: 14px !important;
+    }
+
+    .color-iphone17 span {
+        margin: 0 !important;
+    }
+
+    .color-iphone17 .color {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+}
+
