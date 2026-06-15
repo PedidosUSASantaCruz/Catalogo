@@ -221,3 +221,42 @@ botonesCategorias.forEach(boton => {
 
 });
 
+function actualizarContadoresCategorias() {
+
+    let productos = document.querySelectorAll(".producto");
+
+    // Reiniciar contadores
+    let conteo = {
+        iphone: 0,
+        ipad: 0,
+        airpods: 0,
+        watch: 0,
+        mac: 0,
+        cables: 0,
+        adaptadores: 0
+    };
+
+    // Contar productos
+    productos.forEach(producto => {
+
+        let categoria = producto.dataset.categoria;
+
+        if (conteo[categoria] !== undefined) {
+            conteo[categoria]++;
+        }
+
+    });
+
+    // Actualizar números en los botones
+    document.getElementById("total-productos").textContent = productos.length;
+
+    document.getElementById("total-iphone").textContent = conteo.iphone;
+    document.getElementById("total-ipad").textContent = conteo.ipad;
+    document.getElementById("total-airpods").textContent = conteo.airpods;
+    document.getElementById("total-watch").textContent = conteo.watch;
+    document.getElementById("total-mac").textContent = conteo.mac;
+    document.getElementById("total-cables").textContent = conteo.cables;
+    document.getElementById("total-adaptadores").textContent = conteo.adaptadores;
+
+}
+actualizarContadoresCategorias();
