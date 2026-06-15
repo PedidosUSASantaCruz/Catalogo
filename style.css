@@ -67,7 +67,7 @@ section {
     box-shadow: 0 8px 20px rgba(0,0,0,0.10);
     margin: 0 auto 20px;
     transition: all 0.4s ease;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     animation: aparecerProducto 0.4s ease forwards;
 }
@@ -121,9 +121,58 @@ section {
 }
 
 /* Colores disponibles */
-.disponible {
-    background-color: #d4f8d4;
-    color: #0a6d0a;
+disponible {
+    background: #d8f4d8;
+    color: #056b05;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 20px;
+    margin: 12px 0;
+
+    border-radius: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.disponible:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.disponible:active {
+    transform: scale(0.98);
+}
+
+.disponible .color {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #888;
+    display: inline-block;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.azul-profundo {
+    background-color: #1d2d50;
+}
+
+.naranja {
+    background-color: #d96a1a;
+}
+
+.plateado {
+    background-color: #c0c0c0;
 }
 
 /* Colores agotados */
@@ -483,12 +532,12 @@ h4 {
     border-radius: 25px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
-@@media (max-width: 768px) {
+@media (max-width: 768px) {
 
     .producto {
-        width: calc(100% - 24px);
-        margin: 18px auto;
-        padding: 15px;
+        width: 98%;
+        padding: 18px;
+        margin: 20px auto;
         border-radius: 20px;
     }
 
@@ -675,5 +724,75 @@ h4 {
         margin: 20px auto;
     }
 
+}
+
+/* Colores exclusivos iPhone 17 Pro Max */
+.azul-profundo {
+    background-color: #1e2c67;
+}
+
+.cosmic-orange {
+    background-color: #e56b14;
+}
+
+.plateado-17 {
+    background-color: #c0c0c0;
+}
+
+/* Botones de colores iPhone 17 */
+.color-iphone17 {
+    gap: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 12px auto;
+    padding: 15px 20px;
+
+    background-color: #d7f5d7;
+    border-radius: 25px;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.color-iphone17 span {
+    margin: 0 10px;
+}
+
+/* Flechas exclusivas iPhone 17 */
+.carrusel-iphone17 {
+    position: relative;
+}
+
+.carrusel-iphone17 .anterior,
+.carrusel-iphone17 .siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    font-size: 20px;
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+/* Flecha izquierda */
+.carrusel-iphone17 .anterior {
+    left:  35px;
+}
+
+/* Flecha derecha */
+.carrusel-iphone17 .siguiente {
+    right:  35px;
 }
 

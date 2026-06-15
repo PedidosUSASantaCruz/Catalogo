@@ -41,39 +41,27 @@ class="whatsapp" target="_blank">
     <!-- Botones de categorías -->
     <div class="categorias">
 
-    <button onclick="mostrarCategoria('todos')">
-        📦 Todos (<span id="cat-todos">0</span>)
+    <button data-categoria="todos" class="activo">
+        📦 Todos
     </button>
 
-    <button onclick="mostrarCategoria('iphone')">
-        📱 iPhone (<span id="cat-iphone">0</span>)
+    <button data-categoria="iphone">
+        📱 iPhone
     </button>
 
-    <button onclick="mostrarCategoria('ipad')">
-        📟 iPad (<span id="cat-ipad">0</span>)
+    <button data-categoria="airpods">
+        🎧 AirPods
     </button>
 
-    <button onclick="mostrarCategoria('airpods')">
-        🎧 AirPods (<span id="cat-airpods">0</span>)
+    <button data-categoria="cables">
+        🔌 Cables
     </button>
 
-    <button onclick="mostrarCategoria('watch')">
-        ⌚ Apple Watch (<span id="cat-watch">0</span>)
+    <button data-categoria="adaptadores">
+        ⚡ Adaptadores
     </button>
 
-    <button onclick="mostrarCategoria('mac')">
-        💻 Mac (<span id="cat-mac">0</span>)
-    </button>
-
-    <button onclick="mostrarCategoria('cables')">
-        🔌 Cables (<span id="cat-cables">0</span>)
-    </button>
-
-    <button onclick="mostrarCategoria('adaptadores')">
-        ⚡ Adaptadores (<span id="cat-adaptadores">0</span>)
-    </button>
-
-</div>
+    </div>
 
 
     <div class="buscador">
@@ -90,85 +78,111 @@ class="whatsapp" target="_blank">
 </div>
 
 
-  <div class="producto" data-categoria="iphone">
-    
-     <div class="galeria-producto">
+<div class="producto" data-categoria="iphone">
 
-    <button class="flecha izquierda" onclick="cambiarImagen(this, -1)">
+   <!-- Carrusel -->
+<div class="carrusel carrusel-iphone17">
+
+    <button class="anterior" onclick="cambiarImagen(this, -1)">
         ◀
     </button>
 
-    <img class="imagen-producto"
-    src="imagenes/iphone16promax-frente-titanio negro.png"
-    
-    data-imagenes='[
-        "imagenes/iphone16promax-frente-titanio negro.png",
-        "imagenes/iphone16promax-posterior-titanio-negro.png"
-    ]'
+    <img 
+        src="imagenes/iphone17promax-azul-profundo-1.webp"
+        class="imagen-producto"
 
-    data-actual="0"
+        data-imagenes='[
+            "imagenes/iphone17promax-azul-profundo-1.webp",
+            "imagenes/iphone17promax-azul-profundo-2.webp",
+            "imagenes/iphone17promax-azul-profundo-3.webp",
+            "imagenes/iphone17promax-azul-profundo-4.webp",
 
-    alt="iPhone 16 Pro Max">
+            "imagenes/iphone17promax-cosmic-orange-1.webp",
+            "imagenes/iphone17promax-cosmic-orange-2.webp",
+            "imagenes/iphone17promax-cosmic-orange-3.webp",
+            "imagenes/iphone17promax-cosmic-orange-4.webp",
 
+            "imagenes/iphone17promax-plateado-1.webp",
+            "imagenes/iphone17promax-plateado-2.webp",
+            "imagenes/iphone17promax-plateado-3.webp",
+            "imagenes/iphone17promax-plateado-4.webp"
+        ]'
 
-    <button class="flecha derecha" onclick="cambiarImagen(this, 1)">
+        data-actual="0"
+
+        alt="iPhone 17 Pro Max 256GB">
+
+    <button class="siguiente" onclick="cambiarImagen(this, 1)">
         ▶
     </button>
 
-        </div>
-
-        <h3>iPhone 16 Pro Max 256GB</h3>
-
-        
-
-       <p class="precio">
-    Bs. 11.500
-</p>
-
-<div class="descripcion">
-
-<h5>📋 Características principales</h5>
-
-<p>📱 Pantalla Super Retina XDR de 6,9 pulgadas con ProMotion 120 Hz.</p>
-<p>⚡ Chip Apple A18 Pro de máximo rendimiento.</p>
-<p>💾 Memoria RAM de 8 GB.</p>
-<p>📦 Almacenamiento interno de 256 GB.</p>
-<p>🍎 Sistema iOS 18 con las últimas funciones de Apple.</p>
-<p>✨ Diseño premium de titanio resistente y elegante.</p>
-
 </div>
 
-        <div class="stock">
-    <div class="colores">
+    <!-- Nombre y precio -->
+    <h3>iPhone 17 Pro Max 256GB</h3>
 
+    <p class="precio">Bs. 12.700</p>
+
+
+    <!-- Descripción -->
+    <div class="descripcion">
+
+        <h4>📋 Características principales</h4>
+
+        <p>📱 Pantalla Super Retina XDR de 6,9 pulgadas con resolución 2868 × 1320 píxeles.</p>
+
+        <p>⚡ Chip Apple A17 Pro de alto rendimiento.</p>
+
+        <p>💾 Almacenamiento interno de 256 GB.</p>
+
+        <p>🍎 Sistema operativo iOS 26 con las últimas funciones de Apple.</p>
+
+        <p>🚀 Procesador de hasta 3,7 GHz para un desempeño rápido y fluido.</p>
+
+        <p>✨ Diseño premium elegante y resistente.</p>
+
+    </div>
+
+
+    <!-- Disponibilidad -->
     <h4>Colores disponibles</h4>
 
-    <div class="color disponible">
-    <span class="circulo negro"></span>
-    <span class="nombre-color">Titanio Negro</span>
-    <span class="cantidad">2 unidades</span>
+
+    <!-- Azul -->
+    <div class="disponible color-iphone17" onclick="cambiarColor(this, 0)">
+    <span class="color azul-profundo"></span>
+
+    <span>Azul profundo</span>
+
+    <span>4 unidades</span>
+
 </div>
 
-    <div class="color disponible">
-    <span class="circulo natural"></span>
-    <span class="nombre-color">Titanio Natural</span>
-    <span class="cantidad">1 unidad</span>
+
+    <!-- Naranja -->
+   <div class="disponible color-iphone17" onclick="cambiarColor(this, 4)">
+   <span class="color naranja"></span>
+
+    <span>Cosmic Orange</span>
+
+    <span>2 unidades</span>
+
 </div>
 
-    <div class="color agotado">
-    <span class="circulo blanco"></span>
-    <span class="nombre-color">Titanio Blanco</span>
-    <span class="cantidad">Agotado</span>
+    <!-- Plateado -->
+    <div class="disponible color-iphone17" onclick="cambiarColor(this, 8)">
+
+    <span class="color plateado"></span>
+
+    <span>Plateado</span>
+
+    <span>9 unidades</span>
+
 </div>
 
-   <div class="color agotado">
-    <span class="circulo desierto"></span>
-    <span class="nombre-color">Titanio Desierto</span>
-    <span class="cantidad">Agotado</span>
-</div>
-</div>
-</div>
-</div>
+</div> <!-- cierra producto iPhone 17 -->
+
+<!-- AQUI TERMINA EL IPHONE -->
 
 <!-- AQUI TERMINA EL IPHONE -->
 
@@ -213,7 +227,7 @@ class="whatsapp" target="_blank">
         </p>
 
 
-        <div class="descripcion-producto">
+        <div class="descripcion">
 
             <p>⚡ Cable USB C a USB C de Anker con carga rápida de 60W.</p>
 
@@ -460,7 +474,7 @@ class="whatsapp" target="_blank">
     </p>
 
 
-    <div class="descripcion-producto">
+    <div class="descripcion">
 
         <p>⚡ Cable USB-C a USB-C con carga rápida de hasta 240W.</p>
 
@@ -535,7 +549,7 @@ class="whatsapp" target="_blank">
     </p>
 
 
-    <div class="descripcion-producto">
+    <div class="descripcion">
 
         <p>🎧 Auriculares inalámbricos Apple con conexión Bluetooth.</p>
 
@@ -612,7 +626,7 @@ class="whatsapp" target="_blank">
     </p>
 
 
-    <div class="descripcion-producto">
+    <div class="descripcion">
 
         <p>🎧 Auriculares inalámbricos Apple con audio premium.</p>
 

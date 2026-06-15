@@ -14,44 +14,7 @@ function buscarProductos() {
 }
 
 
-function mostrarCategoria(categoria) {
 
-    console.log(categoria);
-
-    let botones = document.querySelectorAll(".categorias button");
-
-     botones.forEach(boton => {
-        
-    boton.classList.remove("activo");
-});
-
-event.target.classList.add("activo");
-
-    let productos = document.querySelectorAll(".producto");
-
-    productos.forEach(producto => {
-
-        let categoriaProducto = producto.getAttribute("data-categoria");
-
-        if (categoria === "todos" || categoriaProducto === categoria) {
-
-            producto.style.display = "block";
-
-            // Reinicia la animación
-            producto.style.animation = "none";
-
-            producto.offsetHeight; // fuerza el reinicio
-
-            producto.style.animation = "aparecerProducto 0.4s ease forwards";
-
-        } else {
-
-            producto.style.display = "none";
-
-        }
-
-    });
-}
 
 // Posición actual de la imagen
 
@@ -131,43 +94,6 @@ function actualizarContador() {
 
 }
 
-
-actualizarContador();
-
-function actualizarCategorias() {
-
-    let productos = document.querySelectorAll(".producto");
-
-    let conteo = {
-        iphone: 0,
-        ipad: 0,
-        airpods: 0,
-        watch: 0,
-        mac: 0,
-        cables: 0,
-        adaptadores: 0
-    };
-
-    productos.forEach(producto => {
-
-        let categoria = producto.dataset.categoria;
-
-        if (conteo[categoria] !== undefined) {
-            conteo[categoria]++;
-        }
-
-    });
-
-    document.getElementById("cat-todos").textContent = productos.length;
-
-    for (let categoria in conteo) {
-        document.getElementById("cat-" + categoria).textContent = conteo[categoria];
-    }
-
-}
-
-actualizarCategorias();
-
 function agregarBotonesWhatsApp() {
 
     let productos = document.querySelectorAll(".producto");
@@ -225,3 +151,73 @@ window.addEventListener("scroll", function() {
 }
 
 });
+
+function cambiarColor(colorSeleccionado, posicion) {
+
+    
+
+    // Busca el producto donde se hizo clic
+    let producto = colorSeleccionado.closest(".producto");
+
+    // Busca la imagen de ese producto
+    let imagen = producto.querySelector(".imagen-producto");
+
+    // Obtiene la lista de imágenes del carrusel
+    let imagenes = JSON.parse(imagen.dataset.imagenes);
+
+    // Cambia a la primera imagen del color elegido
+    imagen.src = imagenes[posicion];
+
+    // Actualiza la posición actual del carrusel
+    imagen.dataset.actual = posicion;
+
+    // Quita la selección anterior
+    let colores = producto.querySelectorAll(".disponible");
+
+    colores.forEach(color => {
+        color.classList.remove("seleccionado");
+    });
+
+    // Marca el color actual
+    colorSeleccionado.classList.add("seleccionado");
+    
+
+}
+
+// Filtrar productos por categoría
+
+let botonesCategorias = document.querySelectorAll(".categorias button");
+
+botonesCategorias.forEach(boton => {
+
+    boton.addEventListener("click", function() {
+
+        // Quitar selección anterior
+        botonesCategorias.forEach(b => {
+            b.classList.remove("activo");
+        });
+
+        // Marcar botón actual
+        boton.classList.add("activo");
+
+        let categoria = boton.dataset.categoria;
+
+        let productos = document.querySelectorAll(".producto");
+
+        productos.forEach(producto => {
+
+            if (
+                categoria === "todos" ||
+                producto.dataset.categoria.trim().toLowerCase() === categoria
+            ) {
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
