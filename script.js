@@ -109,7 +109,7 @@ function agregarBotonesWhatsApp() {
         let enlace = document.createElement("a");
 
         enlace.href = 
-        "https://wa.me/59174663104?text=" + encodeURIComponent(mensaje);
+        "https://wa.me/59160006575?text=" + encodeURIComponent(mensaje);
 
         enlace.className = "boton-whatsapp-producto";
 
