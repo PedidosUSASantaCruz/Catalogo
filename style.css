@@ -847,3 +847,32 @@ h4 {
     }
 
 }
+
+.anterior,
+.siguiente {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    font-size: 25px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.anterior {
+    left: 10px;
+}
+
+.siguiente {
+    right: 10px;
+}
+
+.anterior:active,
+.siguiente:active {
+    transform: translateY(-50%) scale(0.90);
+}
