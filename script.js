@@ -3,7 +3,7 @@ function buscarProductos() {
     let productos = document.querySelectorAll(".producto");
 
     productos.forEach(producto => {
-        let nombre = producto.textContent.toLowerCase();
+        let nombre = producto.querySelector("h3").textContent.toLowerCase();
 
         if (nombre.includes(texto)) {
             producto.style.display = "block";
@@ -70,29 +70,7 @@ function precargarImagenes() {
 
 precargarImagenes();
 
-function actualizarContador() {
 
-    let productos = document.querySelectorAll(".producto");
-
-    let totalProductos = productos.length;
-    let totalUnidades = 0;
-
-    document.querySelectorAll(".cantidad").forEach(item => {
-
-        let texto = item.textContent;
-
-        let numero = parseInt(texto);
-
-        if (!isNaN(numero)) {
-            totalUnidades += numero;
-        }
-
-    });
-
-    document.getElementById("total-productos").textContent = totalProductos;
-    document.getElementById("total-unidades").textContent = totalUnidades;
-
-}
 
 function agregarBotonesWhatsApp() {
 
@@ -248,7 +226,7 @@ function actualizarContadoresCategorias() {
     });
 
     // Actualizar números en los botones
-    document.getElementById("total-productos").textContent = productos.length;
+    
 
     document.getElementById("total-iphone").textContent = conteo.iphone;
     document.getElementById("total-ipad").textContent = conteo.ipad;
