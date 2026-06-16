@@ -24,31 +24,58 @@ function cambiarImagen(boton, direccion) {
     let galeria = boton.parentElement;
     let imagen = galeria.querySelector(".imagen-producto");
 
-    // Obtiene la lista de imágenes guardada en HTML
+    // Obtiene la lista de imágenes
     let imagenes = JSON.parse(imagen.dataset.imagenes);
 
-    // Saber cuál imagen está mostrando actualmente
+    // Posición actual
     let actual = parseInt(imagen.dataset.actual);
 
-    // Cambiar posición
+      // Si está en la portada del iPhone, ir a la primera imagen real
+     if (actual === -1) {
+    actual = 0;
+     } else {
     actual = actual + direccion;
-
-    // Si pasa del límite vuelve al inicio
-    if (actual >= imagenes.length) {
-        actual = 0;
     }
 
-    // Si va antes de la primera va a la última
-    if (actual < 0) {
-        actual = imagenes.length - 1;
+
+    // Si el producto tiene un rango de color seleccionado
+    if (imagen.dataset.inicio !== undefined) {
+
+        let inicio = parseInt(imagen.dataset.inicio);
+        let fin = parseInt(imagen.dataset.fin);
+
+
+        // Si pasa del último del color, vuelve al primero
+        if (actual > fin) {
+            actual = inicio;
+        }
+
+        // Si va antes del primero, vuelve al último
+        if (actual < inicio) {
+            actual = fin;
+        }
+
+    } else {
+
+        // Funcionamiento normal para otros productos
+        if (actual >= imagenes.length) {
+            actual = 0;
+        }
+
+        if (actual < 0) {
+            actual = imagenes.length - 1;
+        }
     }
 
-    // Cambia la foto
+
+    // Cambia la imagen
     imagen.src = imagenes[actual];
 
-    // Guarda la posición actual
+    // Guarda la posición
     imagen.dataset.actual = actual;
 }
+
+
 function precargarImagenes() {
 
     let imagenes = document.querySelectorAll(".imagen-producto");
@@ -147,6 +174,11 @@ function cambiarColor(colorSeleccionado, posicion) {
     // Actualiza la posición actual del carrusel
     imagen.dataset.actual = posicion;
 
+    // Guarda el rango de imágenes del color seleccionado
+    imagen.dataset.inicio = posicion;
+    imagen.dataset.fin = posicion + 3;
+    
+
 
     // Quita el color seleccionado anterior
     let colores = producto.querySelectorAll(".color-item");
@@ -204,6 +236,7 @@ function actualizarContadoresCategorias() {
 
     // Reiniciar contadores
     let conteo = {
+        todos: 0,   
         iphone: 0,
         ipad: 0,
         airpods: 0,
@@ -226,7 +259,7 @@ function actualizarContadoresCategorias() {
 
     // Actualizar números en los botones
     
-
+    document.getElementById("total-productos").textContent = productos.length;
     document.getElementById("total-iphone").textContent = conteo.iphone;
     document.getElementById("total-ipad").textContent = conteo.ipad;
     document.getElementById("total-airpods").textContent = conteo.airpods;
