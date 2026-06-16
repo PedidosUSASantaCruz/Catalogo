@@ -132,8 +132,6 @@ window.addEventListener("scroll", function() {
 
 function cambiarColor(colorSeleccionado, posicion) {
 
-    
-
     // Busca el producto donde se hizo clic
     let producto = colorSeleccionado.closest(".producto");
 
@@ -149,16 +147,17 @@ function cambiarColor(colorSeleccionado, posicion) {
     // Actualiza la posición actual del carrusel
     imagen.dataset.actual = posicion;
 
-    // Quita la selección anterior
-    let colores = producto.querySelectorAll(".disponible");
+
+    // Quita el color seleccionado anterior
+    let colores = producto.querySelectorAll(".color-item");
 
     colores.forEach(color => {
-        color.classList.remove("seleccionado");
+        color.classList.remove("activo");
     });
 
-    // Marca el color actual
-    colorSeleccionado.classList.add("seleccionado");
-    
+
+    // Activa el nuevo color seleccionado
+    colorSeleccionado.classList.add("activo");
 
 }
 
