@@ -270,3 +270,23 @@ function actualizarContadoresCategorias() {
 
 }
 actualizarContadoresCategorias();
+
+// ==========================
+// Selector de colores iPhone 18
+// ==========================
+
+function seleccionarColor18(colorSeleccionado) {
+
+    // Busca el producto correspondiente
+    let producto = colorSeleccionado.closest(".producto");
+
+    // Quita el color seleccionado anteriormente
+    let colores = producto.querySelectorAll(".color-item");
+
+    colores.forEach(color => {
+        color.classList.remove("activo");
+    });
+
+    // Activa el nuevo color
+    colorSeleccionado.classList.add("activo");
+}

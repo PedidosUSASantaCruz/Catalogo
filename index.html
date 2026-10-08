@@ -85,98 +85,111 @@ class="whatsapp" target="_blank">
 <div class="producto" data-categoria="iphone">
 
    <!-- Carrusel -->
-<div class="carrusel carrusel-iphone17">
+<div class="carrusel >
 
-    <button class="anterior" onclick="cambiarImagen(this, -1)">
-        ◀
-    </button>
-
-    <img 
-        src="imagenes/portada-iphone17promax.webp"
-        class="imagen-producto"
-
-        data-imagenes='[
-            "imagenes/iphone17promax-azul-profundo-1.webp",
-            "imagenes/iphone17promax-azul-profundo-2.webp",
-            "imagenes/iphone17promax-azul-profundo-3.webp",
-            "imagenes/iphone17promax-azul-profundo-4.webp",
-
-            "imagenes/iphone17promax-cosmic-orange-1.webp",
-            "imagenes/iphone17promax-cosmic-orange-2.webp",
-            "imagenes/iphone17promax-cosmic-orange-4.webp",
-            "imagenes/iphone17promax-cosmic-orange-3.webp",
-
-            "imagenes/iphone17promax-plateado-1.webp",
-            "imagenes/iphone17promax-plateado-2.webp",
-            "imagenes/iphone17promax-plateado-3.webp",
-            "imagenes/iphone17promax-plateado-4.webp"
-        ]'
-
-        data-actual="1"
-
-        alt="iPhone 17 Pro Max 256GB">
-
-    <button class="siguiente" onclick="cambiarImagen(this, 1)">
-        ▶
-    </button>
+   
 
 </div>
 
-    <!-- Nombre y precio -->
-    <h3>iPhone 17 Pro Max 256GB</h3>
+  
+<!-- ==========================
+     iPhone 18 Pro Max 256GB
+========================== -->
 
-    <p class="precio">Bs. 12,700</p>
+<div class="producto" data-categoria="iphone">
 
-    <p class="titulo-colores">
-    Elige tu color
-    </p>
+    <div class="carrusel carrusel-iphone17">
+
+        <button class="anterior"
+                onclick="cambiarImagen(this, -1)">
+            ◀
+        </button>
+
+        <img
+            src="imagenes/18-pro-max-1.webp"
+            alt="iPhone 18 Pro Max 256GB"
+            class="imagen-producto"
+            data-imagenes='[
+                "imagenes/18-pro-max-1.webp",
+                "imagenes/18-pro-max-2.webp",
+                "imagenes/18-pro-max-3.webp"
+            ]'
+            data-actual="0"
+        >
+
+        <button class="siguiente"
+                onclick="cambiarImagen(this, 1)">
+            ▶
+        </button>
+
+    </div>
+
+    <h3>iPhone 18 Pro Max 256GB</h3>
+
+    <p class="precio">1.800 $ </p>
+
+    <p class="titulo-colores">Elige tu color</p>
 
     <div class="selector-colores">
 
-    <div class="color-item" onclick="cambiarColor(this, 0)">
-        <span class="circulo azul-profundo"></span>
-        <span class="info-color">
-            Azul profundo · 4 und.
-        </span>
+        <div class="color-item"
+             onclick="seleccionarColor18(this)">
+            <span class="circulo"
+                  style="background:linear-gradient(135deg,#dbe8f5,#aebfd3)">
+            </span>
+            <span class="info-color">Glaciar · 6 und.</span>
+        </div>
+
+        <div class="color-item"
+             onclick="seleccionarColor18(this)">
+            <span class="circulo"
+                  style="background:linear-gradient(135deg,#303136,#090a0c)">
+            </span>
+            <span class="info-color">Negro · 2 und.</span>
+        </div>
+
+        <div class="color-item"
+             onclick="seleccionarColor18(this)">
+            <span class="circulo"
+                  style="background:linear-gradient(135deg,#f5f5f5,#bfc2c5)">
+            </span>
+            <span class="info-color">Plata · 1 und.</span>
+        </div>
+
+        <div class="color-item agotado"
+             style="opacity:.55;cursor:not-allowed;animation:none">
+            <span class="circulo"
+                  style="background:linear-gradient(135deg,#6e2738,#3b101b)">
+            </span>
+            <span class="info-color">Borgoña · AGOTADO</span>
+        </div>
+
     </div>
 
+     
+<div class="descripcion">
 
-    <div class="color-item" onclick="cambiarColor(this, 4)">
-        <span class="circulo cosmic-orange"></span>
-        <span class="info-color">
-            Cosmic Orange · 2 und.
-        </span>
-    </div>
+    <h5>✨ Características principales</h5>
+
+    <p>📱 <strong>Pantalla:</strong> Super Retina XDR OLED de 6,9 pulgadas, ideal para disfrutar de contenido con gran nivel de detalle.</p>
+
+    <p>💾 <strong>Almacenamiento:</strong> 256 GB para tus aplicaciones, fotografías, videos y archivos.</p>
+
+    <p>📸 <strong>Cámaras:</strong> Sistema de cámaras Pro diseñado para capturar fotos y videos con gran calidad.</p>
+
+    <p>⚡ <strong>Rendimiento:</strong> Potencia y fluidez para realizar múltiples tareas y disfrutar de tus aplicaciones.</p>
+
+    <p>🎨 <strong>Diseño:</strong> Acabado premium disponible en Glaciar, Negro, Plata y Borgoña.</p>
+
+    <p>📶 <strong>Conectividad:</strong> Conexión 5G y compatibilidad con funciones del ecosistema Apple.</p>
 
 
-    <div class="color-item" onclick="cambiarColor(this, 8)">
-        <span class="circulo plateado-17"></span>
-        <span class="info-color">
-            Plateado · 9 und.
-        </span>
-    </div>
 
 </div>
 
+</div>
 
-    <!-- Descripción -->
-    <div class="descripcion">
-
-        <h4>📋 Características principales</h4>
-
-        <p>📱 Pantalla Super Retina XDR de 6,9 pulgadas con resolución 2868 × 1320 píxeles.</p>
-
-        <p>⚡ Chip Apple A17 Pro de alto rendimiento.</p>
-
-        <p>💾 Almacenamiento interno de 256 GB.</p>
-
-        <p>🍎 Sistema operativo iOS 26 con las últimas funciones de Apple.</p>
-
-        <p>🚀 Procesador de hasta 3,7 GHz para un desempeño rápido y fluido.</p>
-
-        <p>✨ Diseño premium elegante y resistente.</p>
-
-    </div>
+<!-- AQUI TERMINA EL IPHONE -->
 
 
     
