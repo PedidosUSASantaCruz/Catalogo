@@ -928,3 +928,20 @@ h4 {
     }
 
 }
+
+
+/* Evitar aumentos y movimientos raros en el selector */
+.selector-colores .color-item {
+    animation: none !important;
+    transform: none;
+}
+
+.selector-colores .color-item:active {
+    transform: none !important;
+}
+
+/* Evitar que el selector agrande la página en móviles */
+.selector-colores {
+    max-width: 100%;
+    box-sizing: border-box;
+}
