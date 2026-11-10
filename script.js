@@ -99,33 +99,49 @@ precargarImagenes();
 
 
 
-function agregarBotonesWhatsApp() {
+// Limpiar espacios y saltos de línea de los nombres y precios del HTML.
+function limpiarTextoWhatsApp(texto) {
+    return texto.replace(/\s+/g, " ").trim();
+}
 
-    let productos = document.querySelectorAll(".producto");
+function agregarBotonesWhatsApp() {
+    const productos = document.querySelectorAll(".producto");
 
     productos.forEach(producto => {
-
-        let nombre = producto.querySelector("h3").textContent;
-        let precio = producto.querySelector(".precio").textContent;
-
-        let mensaje = 
-        `Hola 👋, estoy interesado en ${nombre} con un precio de ${precio}. ¿Sigue disponible?`;
-
-        let enlace = document.createElement("a");
-
-        enlace.href = 
-        "https://wa.me/59160006575?text=" + encodeURIComponent(mensaje);
-
+        const enlace = document.createElement("a");
         enlace.className = "boton-whatsapp-producto";
-
-        enlace.innerHTML = "💬 Consultar por WhatsApp";
-
+        enlace.textContent = "💬 Consultar por WhatsApp";
         enlace.target = "_blank";
+        enlace.rel = "noopener noreferrer";
 
+        // Leer nombre, precio y color directamente de la tarjeta original.
+        // Generar el mensaje al hacer clic permite incluir el color seleccionado.
+        const actualizarEnlace = () => {
+            const nombre = limpiarTextoWhatsApp(producto.querySelector("h3").textContent);
+            const precio = limpiarTextoWhatsApp(producto.querySelector(".precio").textContent);
+            const colorActivo = producto.querySelector(".selector-colores .color-item.activo .info-color");
+            const color = colorActivo
+                ? limpiarTextoWhatsApp(colorActivo.textContent).split("·")[0].trim()
+                : "";
+
+            let mensaje;
+            if (/^(agotado|sin stock)$/i.test(precio)) {
+                mensaje = `Hola 👋, estoy interesado en ${nombre}. Vi que figura como agotado. ¿Cuándo volverá a estar disponible?`;
+            } else if (producto.dataset.categoria === "iphone" && !/\d+\s*(\$|bs\b|usd)/i.test(precio)) {
+                const detalleColor = color ? `, en color ${color}` : "";
+                mensaje = `Hola 👋, estoy interesado en ${nombre}${detalleColor}. ¿Podrían indicarme el precio y la disponibilidad?`;
+            } else {
+                mensaje = `Hola 👋, estoy interesado en ${nombre}. El precio indicado es ${precio}. ¿Sigue disponible?`;
+            }
+
+            enlace.href = "https://wa.me/59160006575?text=" + encodeURIComponent(mensaje);
+        };
+
+        // Dejar el enlace listo para clics y navegación con teclado.
+        actualizarEnlace();
+        enlace.addEventListener("click", actualizarEnlace);
         producto.appendChild(enlace);
-
     });
-
 }
 
 agregarBotonesWhatsApp();
